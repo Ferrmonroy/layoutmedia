@@ -1,0 +1,165 @@
+nav {
+  padding: 20px;
+  grid-area: menu;
+  background: #3e315a;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav h1 {
+  font-family: "WindSong", cursive;
+  color: white;
+  font-size: 25px;
+}
+
+.leftnav {
+  display: flex;
+  gap: 10px;
+}
+
+nav img {
+  width: 30px;
+  height: 30px;
+}
+
+.navmenu {
+  font-size: 15px;
+}
+
+.navmenu ul {
+  list-style-type: none;
+}
+
+section {
+  grid-area: buscar;
+  background: #9d81b7;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchbox {
+  background: white;
+  border: 1px solid #979494;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  color: #747373;
+  padding: 5px;
+}
+
+main {
+  grid-area: seccion-principal;
+  padding: 10px;
+  background-image: url(/assets/img/fondo.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenido {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  text-align: center;
+  font-weight: 600;
+  padding: 20px;
+}
+
+.contenido img {
+  width: auto;
+  height: 250px;
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  background-color: snow;
+  border: 1px solid #e1e1e1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  height: auto;
+}
+
+.pagination {
+  justify-content: center;
+  align-items: baseline;
+  font-size: 20px;
+  gap: 10px;
+}
+
+footer {
+  grid-area: pie-de-pagina;
+  background: #3e315a;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin-top: -10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.redsocial {
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  border: 1px solid black;
+  grid-template-rows: 1fr 1fr 40fr 1fr;
+  grid-template-areas:
+    "menu"
+    "buscar"
+    "seccion-principal"
+    "pie-de-pagina";
+}
+
+@media (max-width: 575px) {
+  .navmenu {
+    font-size: 15px;
+    display: none;
+  }
+
+  .navmenu ul {
+    list-style-type: none;
+    display: none;
+  }
+}
+
+@media (min-width: 576px) {
+  .grid {
+    grid-template-areas:
+      "menu buscar"
+      "menu seccion-principal"
+      "pie-de-pagina seccion-principal";
+    grid-template-columns: 1fr 10fr;
+    grid-template-rows: 0.8fr 5fr 2fr;
+    min-height: 100vh;
+  }
+
+  section {
+    padding-bottom: 20px;
+  }
+
+  .hamburguesa {
+    display: none;
+  }
+
+  .contenido {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  footer {
+    background: #211a30;
+  }
+
+  nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+}
